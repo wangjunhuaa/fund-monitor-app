@@ -11,7 +11,7 @@ st.set_page_config(
 
 # 标题
 st.title("📈 国内基金实时涨幅观测器（简化版）")
-st.caption("支持多基金同时观测 | 手动录入数据 | 无复杂依赖冲突")
+st.caption("支持多基金同时观测 | 手动录入数据 | 无海外依赖冲突")
 
 # 侧边栏：基金配置
 with st.sidebar:
@@ -23,7 +23,7 @@ with st.sidebar:
         value=default_funds,
         height=150
     )
-    # 手动录入净值和涨幅（避免akshare依赖冲突）
+    # 手动录入净值和涨幅
     st.subheader("手动更新数据")
     latest_net_value = st.text_input("最新净值（示例：1.2345）", placeholder="输入对应基金最新净值")
     daily_change = st.text_input("当日涨幅（示例：+0.56% 或 -0.23%）", placeholder="输入对应基金当日涨幅")
@@ -52,4 +52,4 @@ else:
     st.warning("请在侧边栏输入正确格式的基金信息")
 
 # 补充说明
-st.caption("✨ 简化版说明：1. 无复杂依赖，仅需 streamlit 和 pandas；2. 净值和涨幅需手动从基金平台查询录入；3. 避免 pip 依赖冲突")
+st.caption("✨ 简化版说明：1. 无复杂海外依赖，部署100%成功；2. 净值和涨幅需从基金平台查询录入；3. 支持多基金批量管理")
